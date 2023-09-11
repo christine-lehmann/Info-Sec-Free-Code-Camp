@@ -20,7 +20,9 @@ app.use(helmet.xssFilter());
 //Use the helmet.noSniff() method
 app.use(helmet.noSniff());
 
-
+// STEP 6: This will prevent IE users from executing downloads in the trusted site’s context.
+// Use the helmet.ieNoOpen() method 
+app.use(helmet.ieNoOpen());
 
 
 
