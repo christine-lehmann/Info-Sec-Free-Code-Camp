@@ -12,6 +12,7 @@ app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({action: 'deny'}));
 
 // STEP 4: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
+// use helmet.xssFilter to sanitize user input
 app.use(helmet.xssFilter());
 
 
