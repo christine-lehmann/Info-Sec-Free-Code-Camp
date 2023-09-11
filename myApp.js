@@ -36,6 +36,9 @@ app.use(
   })
 );
 
+// STEP 8: Disable DNS Prefetching with helmet.dnsPrefetchControl()
+// Use the helmet.dnsPrefetchControl()
+app.use(helmet.dnsPrefetchControl());
 
 
 
