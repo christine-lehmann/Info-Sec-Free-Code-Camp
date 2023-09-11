@@ -15,6 +15,10 @@ app.use(helmet.frameguard({action: 'deny'}));
 // use helmet.xssFilter to sanitize user input
 app.use(helmet.xssFilter());
 
+//STEP 5: This middleware sets the X-Content-Type-Options header to nosniff, instructing the browser 
+//to not bypass the provided Content-Type
+//Use the helmet.noSniff() method
+app.use(helmet.noSniff());
 
 
 
