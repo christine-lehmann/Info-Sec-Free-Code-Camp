@@ -40,6 +40,10 @@ app.use(
 // Use the helmet.dnsPrefetchControl()
 app.use(helmet.dnsPrefetchControl());
 
+// STEP 9: Disable Client-Side Caching with helmet.noCache()
+// Use the helmet.noCache() method 
+app.use(helmet.noCache());
+
 
 
 
