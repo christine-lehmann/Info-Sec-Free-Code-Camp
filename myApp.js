@@ -44,8 +44,21 @@ app.use(helmet.dnsPrefetchControl());
 // Use the helmet.noCache() method 
 app.use(helmet.noCache());
 
+// STEP 10: Set a Content Security Policy with helmet.contentSecurityPolicy()
+// 
+// Sets all of the defaults, but overrides `script-src`
+// and disables the default `style-src`.
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        "defaultSrc":["'self'"],
+        "scriptSrc": ["'self'"],
 
-
+      },
+    },
+  })
+);
 
 
 
