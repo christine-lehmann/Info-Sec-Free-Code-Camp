@@ -22,7 +22,7 @@ app.use(helmet({
       styleSrc: ['style.com'],
     }
   },
-  dnsPrefetchControl: true     // disable
+  dnsPrefetchControl: true     // enable
 }))
 
 // STEP 4: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
