@@ -4,11 +4,6 @@ const app = express();
 
 const PORT = process.env.PORT || 3030;
 
-// your code
-
-app.listen(PORT, () => {
-  console.log(`Arcane Programmer Info Security App Started on Port ${PORT}`);
-});
 
 
 
@@ -64,5 +59,5 @@ app.get("/", function (request, response) {
 });
 let port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log(`Your app is listening on port ${port}`);
+  console.log(`Arcane Programmer Info Security App Started on Port ${PORT}`);
 });
