@@ -24,7 +24,17 @@ app.use(helmet.noSniff());
 // Use the helmet.ieNoOpen() method 
 app.use(helmet.ieNoOpen());
 
-
+// STEP 7: 
+// Sets "Strict-Transport-Security: max-age=123456; includeSubDomains"
+// By setting the header Strict-Transport-Security, you tell the browsers to use HTTPS for the future requests in a specified amount of time.
+var ninetyDaysInSeconds = 90*24*60*60;
+// var ninetyDaysInSeconds = timeInSeconds;
+app.use(
+  helmet.hsts({
+    maxAge: ninetyDaysInSeconds,
+    force: true
+  })
+);
 
 
 
