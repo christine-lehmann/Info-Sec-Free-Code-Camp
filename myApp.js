@@ -9,7 +9,21 @@ app.use(helmet.hidePoweredBy());
 // This can be obtained by executing your page in a malicious context, by means of iframing. 
 // In that context, a hacker can put a hidden layer over your page. 
 // You can also check if your app is safe from clickjacking to this site https://clickjacker.io/
-app.use(helmet.frameguard({action: 'deny'}));
+// app.use(helmet.frameguard({action: 'deny'}));
+
+// STEP 11: Configure Helmet Using the ‘parent’ helmet() Middleware
+app.use(helmet({
+  frameguard: {         // configure
+    action: 'deny'
+  },
+  contentSecurityPolicy: {    // enable and configure
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ['style.com'],
+    }
+  },
+  dnsPrefetchControl: true     // disable
+}))
 
 // STEP 4: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
 // use helmet.xssFilter to sanitize user input
@@ -38,7 +52,7 @@ app.use(
 
 // STEP 8: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 // Use the helmet.dnsPrefetchControl()
-app.use(helmet.dnsPrefetchControl());
+// app.use(helmet.dnsPrefetchControl());
 
 // STEP 9: Disable Client-Side Caching with helmet.noCache()
 // Use the helmet.noCache() method 
@@ -48,15 +62,15 @@ app.use(helmet.noCache());
 // 
 // Sets all of the defaults, but overrides `script-src`
 // and disables the default `style-src`.
-app.use(
-  helmet.contentSecurityPolicy({
-      directives: {
-        "defaultSrc":["'self'"],
-        "scriptSrc": ["'self'", 'trusted-cdn.com'],
+// app.use(
+//   helmet.contentSecurityPolicy({
+//       directives: {
+//         "defaultSrc":["'self'"],
+//         "scriptSrc": ["'self'", 'trusted-cdn.com'],
 
-      },
-    }),
-);
+//       },
+//     }),
+// );
 
 
 
