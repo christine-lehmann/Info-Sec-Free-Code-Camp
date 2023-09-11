@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3030;
 // your code
 
 app.listen(PORT, () => {
-  console.log(`🪄 Arcane Programmer Info Security App Started on Port ${PORT}`);
+  console.log(`Arcane Programmer Info Security App Started on Port ${PORT}`);
 });
 
 
