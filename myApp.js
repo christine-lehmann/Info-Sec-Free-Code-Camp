@@ -49,17 +49,14 @@ app.use(helmet.noCache());
 // Sets all of the defaults, but overrides `script-src`
 // and disables the default `style-src`.
 app.use(
-  helmet({
-    contentSecurityPolicy: {
+  helmet.contentSecurityPolicy({
       directives: {
         "defaultSrc":["'self'"],
         "scriptSrc": ["'self'", 'trusted-cdn.com'],
 
       },
-    },
-  })
+    }),
 );
-
 
 
 
