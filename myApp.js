@@ -11,7 +11,8 @@ app.use(helmet.hidePoweredBy());
 // You can also check if your app is safe from clickjacking to this site https://clickjacker.io/
 app.use(helmet.frameguard({action: 'deny'}));
 
-
+// STEP 4: Mitigate the Risk of Cross Site Scripting (XSS) Attacks with helmet.xssFilter()
+app.use(helmet.xssFilter());
 
 
 
